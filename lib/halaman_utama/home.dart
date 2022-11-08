@@ -348,25 +348,28 @@ class DetailPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Build By ",
-                      style: TextStyle(
-                        fontFamily: font,
-                        fontSize: 15,
-                      ),
-                    ),
-                    Text(
-                      "Cendekia",
-                      style: TextStyle(
+                Container(
+                  margin: EdgeInsets.only(top: 8, bottom: 8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Build By ",
+                        style: TextStyle(
                           fontFamily: font,
                           fontSize: 15,
-                          fontWeight: FontWeight.w600,
-                          color: Color.fromRGBO(1, 180, 220, 1)),
-                    ),
-                  ],
+                        ),
+                      ),
+                      Text(
+                        "Cendekia",
+                        style: TextStyle(
+                            fontFamily: font,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w600,
+                            color: Color.fromRGBO(1, 180, 220, 1)),
+                      ),
+                    ],
+                  ),
                 ),
               ]),
             ),

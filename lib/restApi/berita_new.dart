@@ -2,8 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:project_premmob/halaman_utama/page_menu/belajar.dart';
-import 'package:project_premmob/restApi/detail.dart';
+import 'package:project_premmob/restApi/detail_berita.dart';
 
 import 'package:project_premmob/restApi/model_beritanew.dart';
 import 'constants.dart';
@@ -32,12 +31,17 @@ class _Berita_newState extends State<Berita_new> {
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                   return GestureDetector(
-                    onTap: () =>
-                        Navigator.of(context).push(new MaterialPageRoute(
-                            builder: (BuildContext context) => new Detail(
-                                  list: berita,
-                                  index: index,
-                                ))),
+                    // onTap: () {
+                    //   return print(index);
+                    // },
+                    onTap: () {
+                      Navigator.of(context).push(new MaterialPageRoute(
+                          builder: (BuildContext context) => new Detail(
+                                list: berita,
+                                index: index,
+                              )));
+                    },
+
                     child: Card(
                         elevation: 5,
                         margin: EdgeInsets.only(
@@ -82,11 +86,12 @@ class _Berita_newState extends State<Berita_new> {
                               alignment: Alignment.centerLeft,
                               child: Text(
                                 berita[index].text,
+                                maxLines: 3,
+                                overflow: TextOverflow.ellipsis,
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
                                   fontFamily: 'Baloo 2',
                                   fontSize: 13,
-                                  //fontWeight: FontWeight.w600
                                 ),
                               ),
                             )
