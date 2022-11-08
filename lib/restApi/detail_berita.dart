@@ -46,13 +46,96 @@ class Detail extends StatelessWidget {
               body: ListView(
                 children: [
                   Container(
+                    margin: EdgeInsets.only(
+                      left: 15,
+                      top: 20,
+                      right: 15,
+                    ),
+                    child: Text(
+                      berita[index].title,
+                      //textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontFamily: font,
+                          fontSize: 22,
+                          fontWeight: FontWeight.w800),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 15, right: 15, bottom: 10),
+                    child: Row(
+                      children: [
+                        Container(
+                          child: Row(
+                            children: [
+                              Container(
+                                child: Icon(
+                                  Icons.access_time,
+                                  size: 15,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                'Nov 22 2022',
+                                style:
+                                    TextStyle(fontFamily: font, fontSize: 12),
+                              )
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Container(
+                          child: Row(
+                            children: [
+                              Container(
+                                child: Icon(
+                                  Icons.person_outline,
+                                  size: 15,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                'Setya Novanto',
+                                style:
+                                    TextStyle(fontFamily: font, fontSize: 12),
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(right: 15, left: 15),
                     child: Image.network(berita[index].image),
                   ),
-                  Container(
-                    child: Text(berita[index].name),
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: 15, top: 10, left: 15),
+                        child: Text(
+                          berita[index].name,
+                          style: TextStyle(
+                            fontFamily: font,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   Container(
-                    child: Text(berita[index].text),
+                    margin: EdgeInsets.only(right: 15, left: 15),
+                    child: Text(
+                      berita[index].text,
+                      textAlign: TextAlign.justify,
+                      style: TextStyle(fontFamily: font, fontSize: 15),
+                    ),
                   ),
                 ],
               ),
