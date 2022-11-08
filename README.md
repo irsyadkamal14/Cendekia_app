@@ -1,6 +1,10 @@
-# project_premmob
+# project_Pemrograman Mobile
 
-A new Flutter project.
+Project ini di kembangkan oleh Cendekia Tim
+- Muhammad Irsyad Kamal Fannan
+- Muhammad Safa Faadhilah
+- Yoga Putra Rama Danuarsa
+- Galang Satria 
 
 ## Getting Started
 

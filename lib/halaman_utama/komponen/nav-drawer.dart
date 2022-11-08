@@ -41,11 +41,11 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           const SizedBox(height: 15),
           _drawerItem(
             icon: Icons.person,
-            text: '${loggedInUser.name}',
+            text: 'Nam a',
           ),
           _drawerItem(
             icon: Icons.alternate_email,
-            text: '${loggedInUser.email}',
+            text: 'Email',
           ),
           _drawerItem(
             icon: Icons.alternate_email,
