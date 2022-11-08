@@ -1,4 +1,4 @@
-# project_Pemrograman Mobile
+# Pemrograman Mobile "CENDEKIA"
 
 Project ini di kembangkan oleh Cendekia Tim
 - Muhammad Irsyad Kamal Fannan
