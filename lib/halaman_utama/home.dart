@@ -188,7 +188,9 @@ class DetailPage extends StatelessWidget {
                                 child: Menu(
                                   title: "Event",
                                   gambar: "assets/images/icon_bulb.png",
-                                  press: () {},
+                                  press: () {
+                                    showAlertDialog(context);
+                                  },
                                 ),
                               ),
                             ),
@@ -227,7 +229,9 @@ class DetailPage extends StatelessWidget {
                                 child: Menu(
                                     title: "Video",
                                     gambar: "assets/images/icon_play.png",
-                                    press: () {}),
+                                    press: () {
+                                      showAlertDialog(context);
+                                    }),
                               ),
                             ),
                             Flexible(
@@ -237,7 +241,9 @@ class DetailPage extends StatelessWidget {
                                 child: Menu(
                                     title: "Konsul",
                                     gambar: "assets/images/icon_headphones.png",
-                                    press: () {}),
+                                    press: () {
+                                      showAlertDialog(context);
+                                    }),
                               ),
                             ),
                             Flexible(
@@ -247,7 +253,9 @@ class DetailPage extends StatelessWidget {
                                 child: Menu(
                                     title: "Game",
                                     gambar: "assets/images/icon_puzzle.png",
-                                    press: () {}),
+                                    press: () {
+                                      showAlertDialog(context);
+                                    }),
                               ),
                             ),
                           ],
@@ -284,7 +292,9 @@ class DetailPage extends StatelessWidget {
                               height: 25,
                               margin: EdgeInsets.only(top: 14),
                               child: ElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  showAlertDialog(context);
+                                },
                                 child: Text(
                                   'Lihat',
                                   style: TextStyle(
@@ -378,4 +388,83 @@ class DetailPage extends StatelessWidget {
       ),
     );
   }
+}
+
+showAlertDialog(BuildContext context) {
+  // set up the button
+  Widget okButton = TextButton(
+    child: Text(
+      "OK",
+      style: TextStyle(
+          color: Color.fromRGBO(1, 180, 220, 1),
+          fontSize: 16,
+          fontFamily: font,
+          fontWeight: FontWeight.w800),
+    ),
+    onPressed: () {
+      Navigator.of(context).pop(false);
+    },
+  );
+
+  // set up the AlertDialog
+  AlertDialog alert = AlertDialog(
+    shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(15)),
+    // title: Text("My title"),
+    content: Container(
+      width: 200,
+      height: 200,
+      child: Row(
+        children: [
+          Container(
+            // height: 280,
+            width: 130,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      'Mohon maaf kami sedang berupaya untuk menyediakan fitur ini!',
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontFamily: font,
+                          fontWeight: FontWeight.w800),
+                    )),
+                Container(
+                  alignment: Alignment.topLeft,
+                  margin: EdgeInsets.only(top: 20),
+                  child: Text(
+                    "Cendekia",
+                    style: TextStyle(
+                        color: Color.fromRGBO(1, 180, 220, 1),
+                        fontSize: 16,
+                        fontFamily: font,
+                        fontWeight: FontWeight.w800),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            child: Image.network(
+              'https://firebasestorage.googleapis.com/v0/b/projectpremmob.appspot.com/o/alert.png?alt=media&token=8d6b6140-7316-4e59-b014-9eb514d4dc00',
+              width: 100,
+              height: 200,
+            ),
+          )
+        ],
+      ),
+    ),
+    actions: [
+      okButton,
+    ],
+  );
+
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
 }
