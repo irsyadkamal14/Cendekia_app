@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:project_premmob/halaman_utama/page_menu/belajar.dart';
+import 'package:project_premmob/screens/mainmenu/page_menu/belajar.dart';
 
 class Berita {
   String name;

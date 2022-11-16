@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:project_premmob/login_register/komponen/accountcheck.dart';
-import 'package:project_premmob/login_register/page_register.dart';
+import 'package:project_premmob/screens/sign_InUp/components/accountcheck.dart';
+import 'package:project_premmob/screens/sign_InUp/page_register.dart';
 
-import '../halaman_utama/home.dart';
+import '../mainmenu/home.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:project_premmob/restApi/model_belajar.dart';
+import 'package:project_premmob/models/model_belajar.dart';
 
 class Repo_belajar {
   final _baseurl = "https://634c440dacb391d34a824311.mockapi.io/tb_belajar";

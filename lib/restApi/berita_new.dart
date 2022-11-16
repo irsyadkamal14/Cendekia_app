@@ -4,8 +4,8 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:project_premmob/restApi/detail_berita.dart';
 
-import 'package:project_premmob/restApi/model_beritanew.dart';
-import 'constants.dart';
+import 'package:project_premmob/models/model_beritanew.dart';
+import '../constants.dart';
 
 class Berita_new extends StatefulWidget {
   const Berita_new({super.key});

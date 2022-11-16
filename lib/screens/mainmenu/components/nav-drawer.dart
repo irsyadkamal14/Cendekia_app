@@ -2,8 +2,8 @@ import 'dart:ui';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:project_premmob/login_register/komponen/user_model.dart';
-import 'package:project_premmob/login_register/page_login.dart';
+import 'package:project_premmob/screens/sign_InUp/components/user_model.dart';
+import 'package:project_premmob/screens/sign_InUp/page_login.dart';
 
 final String font = 'Baloo 2';
 
@@ -19,19 +19,22 @@ class _DrawerWidgetState extends State<DrawerWidget> {
   UserModel loggedInUser = UserModel();
 
   @override
-  void initState() {
-    super.initState();
-    FirebaseFirestore.instance
-        .collection("users")
-        .doc(user!.uid)
-        .get()
-        .then((value) {
-      this.loggedInUser = UserModel.fromMap(value.data());
-      setState(() {});
-    });
-  }
+  // void initState() {
+  //   super.initState();
+  //   FirebaseFirestore.instance
+  //       .collection("users")
+  //       .doc(user!.uid)
+  //       .get()
+  //       .then((value) {
+  //     this.loggedInUser = UserModel.fromMap(value.data());
+  //     setState(() {});
+  //   });
+  // }
 
   Widget build(BuildContext context) {
+    final userr = FirebaseAuth.instance.currentUser!.email;
+
+    print("Hasilnya $userr");
     return Drawer(
       backgroundColor: Color.fromRGBO(1, 180, 220, 1),
       child: ListView(
@@ -41,11 +44,11 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           const SizedBox(height: 15),
           _drawerItem(
             icon: Icons.person,
-            text: 'Nam a',
+            text: "Nama",
           ),
           _drawerItem(
             icon: Icons.alternate_email,
-            text: 'Email',
+            text: "${FirebaseAuth.instance.currentUser!.email}",
           ),
           _drawerItem(
             icon: Icons.alternate_email,
@@ -76,7 +79,9 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                   elevation: 5,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20))),
-              onPressed: () {},
+              onPressed: () {
+                logout(context);
+              },
               child: Text(
                 "Keluar",
                 style: TextStyle(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:project_premmob/login_register/page_login.dart';
+import 'package:project_premmob/screens/sign_InUp/page_login.dart';
 
-import 'package:project_premmob/login_register/page_register.dart';
+import 'package:project_premmob/screens/sign_InUp/page_register.dart';
 
 class PageAwal extends StatelessWidget {
   const PageAwal({super.key});

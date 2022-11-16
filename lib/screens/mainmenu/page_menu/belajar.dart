@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:project_premmob/restApi/model_belajar.dart';
+import 'package:project_premmob/models/model_belajar.dart';
 import 'package:project_premmob/restApi/repo_belajar.dart';
 
-import '../../restApi/constants.dart';
+import '../../../constants.dart';
 
 class Belajar extends StatefulWidget {
   const Belajar({super.key});
@@ -79,8 +79,8 @@ class _BelajarState extends State<Belajar> {
                       topLeft: Radius.circular(10),
                       topRight: Radius.circular(10)),
                   child: Image.network(
-                    "http://192.168.1.7/cendekia_app/belajar/${listTb_belajar[index].image}",
-                    //listTb_belajar[index].image,
+                    //"http://192.168.1.7/cendekia_app/belajar/${listTb_belajar[index].image}",
+                    listTb_belajar[index].image,
                     width: 250,
                     height: 150,
                     fit: BoxFit.cover,

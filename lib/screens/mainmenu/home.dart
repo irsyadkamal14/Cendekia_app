@@ -1,18 +1,15 @@
-import 'dart:async';
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:project_premmob/halaman_utama/komponen/nav-drawer.dart';
-import 'package:project_premmob/halaman_utama/page_menu/soal.dart';
-import 'package:project_premmob/halaman_utama/komponen/menu.dart';
+import 'package:get/get.dart';
+import 'package:project_premmob/screens/mainmenu/components/nav-drawer.dart';
+import 'package:project_premmob/screens/mainmenu/components/menu.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
-import 'package:project_premmob/halaman_utama/page_menu/belajar.dart';
-import 'package:project_premmob/halaman_utama/page_menu/diskusi.dart';
-import 'package:project_premmob/halaman_utama/page_menu/komunitas.dart';
+import 'package:project_premmob/screens/mainmenu/page_menu/belajar.dart';
+import 'package:project_premmob/screens/mainmenu/page_menu/diskusi.dart';
+import 'package:project_premmob/screens/mainmenu/page_menu/komunitas.dart';
 import 'package:project_premmob/restApi/berita_new.dart';
-import '../login_register/komponen/accountcheck.dart';
-import '../restApi/constants.dart';
+import 'package:project_premmob/screens/mainmenu/page_menu/soal/quiz_screen.dart';
+import '../sign_InUp/components/accountcheck.dart';
+import '../../constants.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -208,18 +205,10 @@ class DetailPage extends StatelessWidget {
                               child: Container(
                                 margin: EdgeInsets.all(10),
                                 child: Menu(
-                                    title: "Soal",
-                                    gambar: "assets/images/icon_book_open.png",
-                                    press: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) {
-                                            return RegistrationScreen();
-                                          },
-                                        ),
-                                      );
-                                    }),
+                                  title: "Soal",
+                                  gambar: "assets/images/icon_book_open.png",
+                                  press: () => Get.to(QuizScreen()),
+                                ),
                               ),
                             ),
                             Flexible(

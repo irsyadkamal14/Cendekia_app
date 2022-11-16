@@ -44,6 +44,8 @@ dependencies:
   shrink_sidemenu: ^2.0.0+2-null-safety
   http: ^0.13.5
   webview_flutter: ^3.0.4
+  get: ^4.6.5
+  flutter_svg: ^1.1.6
 
 dev_dependencies:
   flutter_test:
@@ -83,6 +85,7 @@ flutter:
     - assets/images/Rectangle2.png
     - assets/images/bottom_img_1.png
     - assets/images/irsyad.jpg
+    - assets/icons/
 
      
 

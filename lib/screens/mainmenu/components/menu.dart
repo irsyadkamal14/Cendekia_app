@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_premmob/halaman_utama/page_menu/komunitas.dart';
+import 'package:project_premmob/screens/mainmenu/page_menu/komunitas.dart';
 
 class Menu extends StatelessWidget {
   final String title;

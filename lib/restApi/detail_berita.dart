@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:project_premmob/restApi/model_beritanew.dart';
+import 'package:project_premmob/models/model_beritanew.dart';
 
 class Detail extends StatelessWidget {
   final List list;

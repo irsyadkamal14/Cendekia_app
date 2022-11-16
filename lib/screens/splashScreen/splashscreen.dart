@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:project_premmob/splash_screen/page_awal.dart';
+import 'package:project_premmob/screens/splashScreen/page_awal.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
