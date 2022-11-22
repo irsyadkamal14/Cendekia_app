@@ -17,6 +17,7 @@ class QuestionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final font = "Baloo 2";
     QuestionController _controller = Get.put(QuestionController());
     return Container(
       margin: EdgeInsets.symmetric(horizontal: kDefaultPadding),
@@ -29,10 +30,14 @@ class QuestionCard extends StatelessWidget {
         children: [
           Text(
             question.question,
-            style: Theme.of(context)
-                .textTheme
-                .headline6!
-                .copyWith(color: kBlackColor),
+            // style: Theme.of(context)
+            //     .textTheme
+            //     .headline6!
+            //     .copyWith(color: kBlackColor),
+            style: TextStyle(
+              fontFamily: font,
+              fontSize: 20,
+            ),
           ),
           SizedBox(height: kDefaultPadding / 2),
           ...List.generate(

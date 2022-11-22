@@ -25,7 +25,9 @@ class MyApp extends StatelessWidget {
           print(snapshot.data);
           return GetMaterialApp(
             debugShowCheckedModeBanner: false,
-            home: snapshot.data != null ? Home() : LoginScreen(),
+            home: snapshot.data != null && snapshot.data!.emailVerified == true
+                ? Home()
+                : LoginScreen(),
             //initialRoute: snapshot.data != null ? const Home() : const Login1(),
           );
         }

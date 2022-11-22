@@ -10,7 +10,8 @@ const kRedColor = Color(0xFFE92E30);
 const kGrayColor = Color(0xFFC1C1C1);
 const kBlackColor = Color(0xFF101010);
 const kPrimaryGradient = LinearGradient(
-  colors: [Color(0xFF46A0AE), Color(0xFF00FFCB)],
+  //colors: [Color(0xFF46A0AE), Color(0xFF00FFCB)],
+  colors: [Color.fromRGBO(3, 132, 161, 1), Color.fromRGBO(121, 225, 247, 1)],
   begin: Alignment.centerLeft,
   end: Alignment.centerRight,
 );

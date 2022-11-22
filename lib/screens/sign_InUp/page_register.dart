@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-
+import 'package:get/get.dart';
 import 'package:project_premmob/screens/sign_InUp/components/accountcheck.dart';
 import 'package:project_premmob/screens/sign_InUp/components/user_model.dart';
 import 'package:project_premmob/screens/sign_InUp/page_login.dart';
@@ -27,7 +27,12 @@ class _Login1State extends State<Login1> {
   final nameeditController = new TextEditingController();
   final usernameeditController = new TextEditingController();
   final emaileditController = new TextEditingController();
+  final no_teleponeeditController = new TextEditingController();
   final passwordeditController = new TextEditingController();
+  final jenjangeditController = new TextEditingController();
+  final proveditController = new TextEditingController();
+  final kotaeditController = new TextEditingController();
+  final lahireditController = new TextEditingController();
   //final confirmPasswordEditingController = new TextEditingController();
 
   // our form key
@@ -284,7 +289,9 @@ class _Login1State extends State<Login1> {
                         contentPadding:
                             EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
                       ),
-                      onChanged: (value) {},
+                      onSaved: (value) {
+                        no_teleponeeditController.text = value!;
+                      },
                     ),
                   ),
                 ),
@@ -435,7 +442,10 @@ class _Login1State extends State<Login1> {
                                           onSelectedItemChanged: (index) {
                                             setState(() => this.index = index);
                                             final item = items[index];
-                                            print(index);
+                                            jenjangeditController.text =
+                                                items[index];
+
+                                            //print(items[index]);
                                           },
                                         ),
                                       )
@@ -479,7 +489,9 @@ class _Login1State extends State<Login1> {
                         contentPadding:
                             EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
                       ),
-                      onChanged: (value) {},
+                      onSaved: (value) {
+                        proveditController.text = value!;
+                      },
                     ),
                   ),
                 ),
@@ -516,7 +528,9 @@ class _Login1State extends State<Login1> {
                         contentPadding:
                             EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
                       ),
-                      onChanged: (value) {},
+                      onSaved: (value) {
+                        kotaeditController.text = value!;
+                      },
                     ),
                   ),
                 ),
@@ -553,7 +567,9 @@ class _Login1State extends State<Login1> {
                         contentPadding:
                             EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
                       ),
-                      onChanged: (value) {},
+                      onSaved: (value) {
+                        lahireditController.text = value!;
+                      },
                     ),
                   ),
                 ),
@@ -674,12 +690,22 @@ class _Login1State extends State<Login1> {
   void signUp(String email, String password) async {
     if (_formKey.currentState!.validate()) {
       try {
-        await _auth
-            .createUserWithEmailAndPassword(email: email, password: password)
-            .then((value) => {postDetailsToFirestore()})
-            .catchError((e) {
-          Fluttertoast.showToast(msg: e!.message);
-        });
+        UserCredential myUser = await _auth.createUserWithEmailAndPassword(
+            email: email, password: password);
+        //     .then((value) => {postDetailsToFirestore()})
+        //     .catchError((e) {
+        //   Fluttertoast.showToast(msg: e!.message);
+        // });
+        await myUser.user!.sendEmailVerification();
+        Get.defaultDialog(
+            title: "Email Verifikasi",
+            middleText: "Kami telah mengirimkan email verifikasi ke $email",
+            onConfirm: () {
+              postDetailsToFirestore();
+              Get.back();
+              Get.back();
+            },
+            textConfirm: "Ya saya akan cek email");
       } on FirebaseAuthException catch (error) {
         switch (error.code) {
           case "invalid-email":
@@ -720,10 +746,19 @@ class _Login1State extends State<Login1> {
     UserModel userModel = UserModel();
 
     // writing all the values
-    userModel.email = user!.email;
-    userModel.uid = user.uid;
+
+    //userModel.uid = user?.uid;
+
+    userModel.uid = user?.uid;
     userModel.name = nameeditController.text;
     userModel.username = usernameeditController.text;
+    userModel.email = user!.email;
+    userModel.no_telepone = no_teleponeeditController.text;
+    userModel.password = passwordeditController.text;
+    userModel.jenjang = jenjangeditController.text;
+    userModel.prov = proveditController.text;
+    userModel.kota = kotaeditController.text;
+    userModel.lahir = lahireditController.text;
 
     await firebaseFirestore
         .collection("users")
@@ -731,7 +766,9 @@ class _Login1State extends State<Login1> {
         .set(userModel.toMap());
     Fluttertoast.showToast(msg: "Account created successfully :) ");
 
-    Navigator.pushAndRemoveUntil((context),
-        MaterialPageRoute(builder: (context) => Home()), (route) => false);
+    // Navigator.pushAndRemoveUntil(
+    //     (context),
+    //     MaterialPageRoute(builder: (context) => LoginScreen()),
+    //     (route) => false);
   }
 }

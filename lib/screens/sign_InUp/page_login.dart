@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 import 'package:project_premmob/screens/sign_InUp/components/accountcheck.dart';
 import 'package:project_premmob/screens/sign_InUp/page_register.dart';
 
@@ -19,8 +20,10 @@ class _LoginScreenState extends State<LoginScreen> {
 
   final _formKey = GlobalKey<FormState>();
 
-  final TextEditingController emailController = new TextEditingController();
-  final TextEditingController passwordController = new TextEditingController();
+  final TextEditingController emailController =
+      new TextEditingController(text: "kamalfanan1404@gmail.com");
+  final TextEditingController passwordController =
+      new TextEditingController(text: "kamal123");
 
   final _auth = FirebaseAuth.instance;
 
@@ -253,13 +256,23 @@ class _LoginScreenState extends State<LoginScreen> {
   void signIn(String email, String password) async {
     if (_formKey.currentState!.validate()) {
       try {
-        await _auth
-            .signInWithEmailAndPassword(email: email, password: password)
-            .then((uid) => {
-                  Fluttertoast.showToast(msg: "Login Successful"),
-                  Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => Home())),
-                });
+        UserCredential myUser = await _auth.signInWithEmailAndPassword(
+            email: email, password: password);
+        // .then((uid) => {
+        //   Fluttertoast.showToast(msg: "Login Successful"),
+        //   Navigator.of(context).pushReplacement(
+        //       MaterialPageRoute(builder: (context) => Home())),
+        // });
+        if (myUser.user!.emailVerified) {
+          Fluttertoast.showToast(msg: "Login Successful");
+          Navigator.of(context)
+              .pushReplacement(MaterialPageRoute(builder: (context) => Home()));
+        } else {
+          Get.defaultDialog(
+            title: "Email Verifikasi",
+            middleText: "$email belum terverifikasi",
+          );
+        }
       } on FirebaseAuthException catch (error) {
         switch (error.code) {
           case "invalid-email":

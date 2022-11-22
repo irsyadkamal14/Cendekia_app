@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:project_premmob/constants.dart';
 import 'package:project_premmob/controllers/question_controller.dart';
@@ -12,7 +11,7 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     // So that we have acccess our controller
     QuestionController _questionController = Get.put(QuestionController());
-
+    final font = 'Baloo 2';
     return Stack(
       children: [
         SafeArea(
@@ -33,17 +32,23 @@ class Body extends StatelessWidget {
                     TextSpan(
                       text:
                           "Question ${_questionController.questionNumber.value}",
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline4!
-                          .copyWith(color: kSecondaryColor),
+                      // style: Theme.of(context)
+                      //     .textTheme
+                      //     .headline4!
+                      //     .copyWith(color: kSecondaryColor),
+                      style: TextStyle(
+                          fontFamily: font,
+                          fontSize: 28,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white70),
                       children: [
                         TextSpan(
                           text: "/${_questionController.questions.length}",
-                          style: Theme.of(context)
-                              .textTheme
-                              .headline5!
-                              .copyWith(color: kSecondaryColor),
+                          style: TextStyle(
+                              fontFamily: font,
+                              fontSize: 28,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white70),
                         ),
                       ],
                     ),

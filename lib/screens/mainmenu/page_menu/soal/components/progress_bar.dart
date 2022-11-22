@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:project_premmob/controllers/question_controller.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:project_premmob/screens/mainmenu/components/nav-drawer.dart';
 
 import '../../../../../constants.dart';
 
@@ -16,7 +16,7 @@ class ProgressBar extends StatelessWidget {
       width: double.infinity,
       height: 35,
       decoration: BoxDecoration(
-        border: Border.all(color: Color(0xFF3F4768), width: 3),
+        border: Border.all(color: Colors.white, width: 2),
         borderRadius: BorderRadius.circular(50),
       ),
       child: GetBuilder<QuestionController>(
@@ -43,8 +43,18 @@ class ProgressBar extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("${(controller.animation.value * 5).round()} sec"),
-                      SvgPicture.asset("assets/icons/clock.svg"),
+                      Text(
+                        "${(controller.animation.value * 5).round()} sec",
+                        style: TextStyle(
+                            fontFamily: font,
+                            color: Colors.white,
+                            fontSize: 15),
+                      ),
+                      //SvgPicture.asset("assets/icons/clock.svg"),
+                      Icon(
+                        Icons.access_time_sharp,
+                        color: Colors.white,
+                      )
                     ],
                   ),
                 ),

@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -18,23 +17,20 @@ class _DrawerWidgetState extends State<DrawerWidget> {
   User? user = FirebaseAuth.instance.currentUser;
   UserModel loggedInUser = UserModel();
 
+  void initState() {
+    super.initState();
+    FirebaseFirestore.instance
+        .collection("users")
+        .doc(user!.uid)
+        .get()
+        .then((value) {
+      this.loggedInUser = UserModel.fromMap(value.data());
+      setState(() {});
+    });
+  }
+
   @override
-  // void initState() {
-  //   super.initState();
-  //   FirebaseFirestore.instance
-  //       .collection("users")
-  //       .doc(user!.uid)
-  //       .get()
-  //       .then((value) {
-  //     this.loggedInUser = UserModel.fromMap(value.data());
-  //     setState(() {});
-  //   });
-  // }
-
   Widget build(BuildContext context) {
-    final userr = FirebaseAuth.instance.currentUser!.email;
-
-    print("Hasilnya $userr");
     return Drawer(
       backgroundColor: Color.fromRGBO(1, 180, 220, 1),
       child: ListView(
@@ -44,27 +40,27 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           const SizedBox(height: 15),
           _drawerItem(
             icon: Icons.person,
-            text: "Nama",
+            text: "${loggedInUser.name}",
           ),
           _drawerItem(
             icon: Icons.alternate_email,
-            text: "${FirebaseAuth.instance.currentUser!.email}",
+            text: "${loggedInUser.email}",
           ),
           _drawerItem(
             icon: Icons.alternate_email,
-            text: 'Username',
+            text: '${loggedInUser.username}',
           ),
           _drawerItem(
             icon: Icons.phone,
-            text: 'No. Telepone',
+            text: '${loggedInUser.no_telepone}',
           ),
           _drawerItem(
             icon: Icons.people,
-            text: 'Jenjang',
+            text: '${loggedInUser.jenjang}',
           ),
           _drawerItem(
             icon: Icons.date_range,
-            text: 'Tahun Lahir',
+            text: '${loggedInUser.lahir}',
           ),
           Divider(height: 50, thickness: 2),
           Container(
@@ -149,10 +145,11 @@ Widget _drawerHeader() {
           height: 90,
           width: 90,
           child: ClipOval(
-            child: Image(
-                image: AssetImage('assets/images/irsyad.jpg'),
-                fit: BoxFit.cover),
-          ),
+              // child: Image(
+              //     image: NetworkImage(FirebaseAuth.instance.currentUser?.),
+              //     fit: BoxFit.cover),
+
+              ),
         ),
       ],
     ),

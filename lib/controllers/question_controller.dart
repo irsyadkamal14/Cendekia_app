@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:get/state_manager.dart';
 import 'package:project_premmob/models/Questions.dart';
 import 'package:project_premmob/screens/mainmenu/page_menu/soal/score/score_screen.dart';
 
