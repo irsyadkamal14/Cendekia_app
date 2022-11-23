@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:project_premmob/screens/mainmenu/page_menu/belajar/belajar_model.dart';
 import 'package:project_premmob/screens/mainmenu/page_menu/belajar/detail_belajar.dart';
-
-import 'common_widgets.dart';
+import 'package:project_premmob/screens/mainmenu/page_menu/belajar/rating.dart';
 
 class Belajarku extends StatefulWidget {
   const Belajarku({super.key});
