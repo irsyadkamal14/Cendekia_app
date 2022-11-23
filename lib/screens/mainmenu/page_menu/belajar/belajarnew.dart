@@ -27,28 +27,17 @@ class _BelajarkuState extends State<Belajarku> {
 
           return Scaffold(
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
-              child: AppBar(
-                flexibleSpace: Container(
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(15)),
-                ),
-                backgroundColor: Color.fromRGBO(1, 180, 220, 1),
-                elevation: 3,
-                title: Text(
-                  "Belajar",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 30.0,
-                    fontFamily: font,
-                  ),
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.vertical(
-                    bottom: Radius.circular(10),
-                  ),
-                ),
+              preferredSize: Size.fromHeight(100), // Set this height
+              child: Container(
+                margin: EdgeInsets.only(top: 50),
+                alignment: Alignment.center,
+                child: Text("Cendekia",
+                    style: TextStyle(
+                      color: Color.fromRGBO(1, 180, 220, 1),
+                      fontWeight: FontWeight.w700,
+                      fontSize: 40.0,
+                      fontFamily: 'Baloo 2',
+                    )),
               ),
             ),
             body: ListView.separated(
@@ -75,16 +64,16 @@ class _BelajarkuState extends State<Belajarku> {
                                     BorderRadius.circular(_borderRadius),
                                 gradient: LinearGradient(
                                     colors: [
-                                      Color(belajar[index].startColor),
-                                      Color(belajar[index].endColor),
+                                      Color.fromRGBO(1, 180, 220, 1),
+                                      Color.fromRGBO(138, 233, 239, 1),
                                     ],
                                     begin: Alignment.topLeft,
                                     end: Alignment.bottomRight),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Color(belajar[index].endColor),
+                                    color: Color.fromRGBO(138, 233, 239, 1),
                                     blurRadius: 12,
-                                    offset: Offset(0, 6),
+                                    offset: Offset(0, 3),
                                   ),
                                 ],
                               ),
@@ -97,8 +86,8 @@ class _BelajarkuState extends State<Belajarku> {
                                 size: Size(100, 150),
                                 painter: CustomCardShapePainter(
                                   _borderRadius,
-                                  Color(belajar[index].startColor),
-                                  Color(belajar[index].endColor),
+                                  Color.fromRGBO(1, 180, 220, 1),
+                                  Color.fromRGBO(138, 233, 239, 1),
                                 ),
                               ),
                             ),

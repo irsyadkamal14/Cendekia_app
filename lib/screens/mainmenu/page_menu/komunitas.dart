@@ -9,28 +9,18 @@ class Discord extends StatelessWidget {
     final String font = 'Baloo 2';
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(60.0),
-        child: AppBar(
-          flexibleSpace: Container(
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
-          ),
-          backgroundColor: Color.fromRGBO(1, 180, 220, 1),
-          elevation: 3,
-          title: Text(
-            "Komunitas",
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w700,
-              fontSize: 30.0,
-              fontFamily: font,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
-              bottom: Radius.circular(10),
-            ),
-          ),
+        preferredSize: Size.fromHeight(100), // Set this height
+        child: Container(
+          margin: EdgeInsets.only(top: 50),
+          alignment: Alignment.center,
+          color: Colors.white,
+          child: Text("Cendekia",
+              style: TextStyle(
+                color: Color.fromRGBO(1, 180, 220, 1),
+                fontWeight: FontWeight.w700,
+                fontSize: 40.0,
+                fontFamily: 'Baloo 2',
+              )),
         ),
       ),
       body: WebView(

@@ -8,17 +8,18 @@ class Belajar {
   String text;
   String title;
   double rating;
-  int startColor;
-  int endColor;
+  // int startColor;
+  // int endColor;
 
-  Belajar(
-      {required this.image,
-      required this.text,
-      required this.title,
-      required this.author,
-      required this.rating,
-      required this.startColor,
-      required this.endColor});
+  Belajar({
+    required this.image,
+    required this.text,
+    required this.title,
+    required this.author,
+    required this.rating,
+    // required this.startColor,
+    // required this.endColor
+  });
 
   Map<String, dynamic> tojson() {
     return {
@@ -27,20 +28,21 @@ class Belajar {
       'text': text,
       'title': title,
       'star': rating,
-      'startColor': startColor,
-      'endColor': endColor,
+      // 'startColor': startColor,
+      // 'endColor': endColor,
     };
   }
 
   factory Belajar.fromSnapshot(
       QueryDocumentSnapshot<Map<String, dynamic>> json) {
     return Belajar(
-        image: json['image'],
-        text: json['text'],
-        title: json['title'],
-        author: json['author'],
-        rating: json['rating'],
-        startColor: json['startColor'],
-        endColor: json['endColor']);
+      image: json['image'],
+      text: json['text'],
+      title: json['title'],
+      author: json['author'],
+      rating: json['rating'],
+      // startColor: json['startColor'],
+      // endColor: json['endColor']
+    );
   }
 }
