@@ -3,13 +3,11 @@ import 'package:get/get.dart';
 import 'package:project_premmob/screens/mainmenu/components/nav-drawer.dart';
 import 'package:project_premmob/screens/mainmenu/components/menu.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
-import 'package:project_premmob/screens/mainmenu/page_menu/belajar.dart';
 import 'package:project_premmob/screens/mainmenu/page_menu/diskusi.dart';
 import 'package:project_premmob/screens/mainmenu/page_menu/komunitas.dart';
 import 'package:project_premmob/restApi/berita_new.dart';
 import 'package:project_premmob/screens/mainmenu/page_menu/soal/quiz_screen.dart';
-import '../sign_InUp/components/accountcheck.dart';
-import '../../constants.dart';
+import 'page_menu/belajar/belajarNew.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -130,7 +128,7 @@ class DetailPage extends StatelessWidget {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) {
-                                          return Belajar();
+                                          return Belajarku();
                                         },
                                       ),
                                     );
