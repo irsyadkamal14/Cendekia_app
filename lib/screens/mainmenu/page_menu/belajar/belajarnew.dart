@@ -180,6 +180,15 @@ class _BelajarkuState extends State<Belajarku> {
                                         ),
                                         RatingBar(
                                             rating: belajar[index].rating),
+                                        //const SizedBox(height: 8),
+                                        Text(
+                                          "Cendekia",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontFamily: font,
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.w800),
+                                        ),
                                       ],
                                     ),
                                   ),
