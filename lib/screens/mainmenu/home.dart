@@ -70,7 +70,7 @@ class DetailPage extends StatelessWidget {
             Container(
               margin: EdgeInsets.only(top: 5, bottom: 5),
               child: ImageSlideshow(
-                indicatorColor: Colors.blue,
+                indicatorColor: Color.fromARGB(255, 255, 255, 255),
                 onPageChanged: (value) {
                   debugPrint('Page changed: $value');
                 },

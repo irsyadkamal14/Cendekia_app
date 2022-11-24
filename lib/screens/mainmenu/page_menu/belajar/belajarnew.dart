@@ -44,11 +44,11 @@ class _BelajarkuState extends State<Belajarku> {
                   return GestureDetector(
                     onTap: () {
                       print(index);
-                      //   Navigator.of(context).push(new MaterialPageRoute(
-                      //       builder: (BuildContext context) => new DetailBelajar(
-                      //             list: belajar,
-                      //             index: index,
-                      //           )));
+                      Navigator.of(context).push(new MaterialPageRoute(
+                          builder: (BuildContext context) => new DetailBelajar(
+                                list: belajar,
+                                index: index,
+                              )));
                     },
                     child: Center(
                       child: Padding(
@@ -196,7 +196,10 @@ class _BelajarkuState extends State<Belajarku> {
           );
         }
         return const Center(
-          child: CircularProgressIndicator(),
+          child: CircularProgressIndicator(
+            backgroundColor: Colors.white,
+            value: 0.20,
+          ),
         );
       },
     );

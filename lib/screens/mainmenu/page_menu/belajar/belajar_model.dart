@@ -7,6 +7,7 @@ class Belajar {
   String image;
   String text;
   String title;
+  String yt;
   double rating;
   // int startColor;
   // int endColor;
@@ -17,6 +18,7 @@ class Belajar {
     required this.title,
     required this.author,
     required this.rating,
+    required this.yt,
     // required this.startColor,
     // required this.endColor
   });
@@ -28,6 +30,7 @@ class Belajar {
       'text': text,
       'title': title,
       'star': rating,
+      'yt': yt,
       // 'startColor': startColor,
       // 'endColor': endColor,
     };
@@ -41,6 +44,7 @@ class Belajar {
       title: json['title'],
       author: json['author'],
       rating: json['rating'],
+      yt: json['yt'],
       // startColor: json['startColor'],
       // endColor: json['endColor']
     );
