@@ -8,6 +8,7 @@ class Belajar {
   String text;
   String title;
   String yt;
+  String baner;
   double rating;
   // int startColor;
   // int endColor;
@@ -19,6 +20,7 @@ class Belajar {
     required this.author,
     required this.rating,
     required this.yt,
+    required this.baner,
     // required this.startColor,
     // required this.endColor
   });
@@ -31,6 +33,7 @@ class Belajar {
       'title': title,
       'star': rating,
       'yt': yt,
+      'baner': baner,
       // 'startColor': startColor,
       // 'endColor': endColor,
     };
@@ -45,6 +48,7 @@ class Belajar {
       author: json['author'],
       rating: json['rating'],
       yt: json['yt'],
+      baner: json['baner'],
       // startColor: json['startColor'],
       // endColor: json['endColor']
     );

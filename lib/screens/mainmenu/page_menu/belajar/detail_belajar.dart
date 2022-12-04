@@ -14,7 +14,6 @@ class DetailBelajar extends StatefulWidget {
 
 class _DetailBelajarState extends State<DetailBelajar> {
   late YoutubePlayerController _controller;
-  final vidioURL = 'https://youtu.be/YMx8Bbev6T4';
 
   @override
   Widget build(BuildContext context) {
