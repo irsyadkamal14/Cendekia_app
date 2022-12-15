@@ -1,10 +1,10 @@
-# Pemrograman Mobile "CENDEKIA"
+# "CENDEKIA"
 
-Project ini di kembangkan oleh Cendekia Tim
-- Muhammad Irsyad Kamal Fannan
-- Muhammad Safa Faadhilah
-- Yoga Putra Rama Danuarsa
-- Galang Satria 
+Android applications developed as learning media for the 
+general public or students, in learning technology and information
+
+# ScreenShoot
+![Frame 14](https://user-images.githubusercontent.com/98598266/207757789-3030f4ac-8bfb-4e42-8c88-37693893ebbf.png)
 
 ## Getting Started
 
