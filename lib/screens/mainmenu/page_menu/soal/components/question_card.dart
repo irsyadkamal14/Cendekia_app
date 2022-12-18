@@ -30,10 +30,6 @@ class QuestionCard extends StatelessWidget {
         children: [
           Text(
             question.question,
-            // style: Theme.of(context)
-            //     .textTheme
-            //     .headline6!
-            //     .copyWith(color: kBlackColor),
             style: TextStyle(
               fontFamily: font,
               fontSize: 20,

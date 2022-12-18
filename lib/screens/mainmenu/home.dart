@@ -45,7 +45,7 @@ class DetailPage extends StatelessWidget {
           flexibleSpace: Container(
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
           ),
-          backgroundColor: Color.fromRGBO(1, 180, 220, 1),
+          backgroundColor: Color.fromRGBO(255, 36, 206, 1),
           elevation: 3,
           title: Text(
             "   Cendekia",
@@ -102,7 +102,7 @@ class DetailPage extends StatelessWidget {
               ),
               child: Column(children: <Widget>[
                 Container(
-                  height: 230,
+                  height: 150,
                   decoration: BoxDecoration(
                     color: Color.fromRGBO(1, 180, 220, 1),
                     borderRadius: BorderRadius.vertical(
@@ -181,68 +181,10 @@ class DetailPage extends StatelessWidget {
                               child: Container(
                                 margin: EdgeInsets.all(10),
                                 child: Menu(
-                                  title: "Event",
-                                  gambar: "assets/images/icon_bulb.png",
-                                  press: () {
-                                    showAlertDialog(context);
-                                  },
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Flexible(
-                        flex: 3,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Flexible(
-                              flex: 3,
-                              child: Container(
-                                margin: EdgeInsets.all(10),
-                                child: Menu(
                                   title: "Soal",
                                   gambar: "assets/images/icon_book_open.png",
                                   press: () => Get.to(QuizScreen()),
                                 ),
-                              ),
-                            ),
-                            Flexible(
-                              flex: 3,
-                              child: Container(
-                                margin: EdgeInsets.all(10),
-                                child: Menu(
-                                    title: "Video",
-                                    gambar: "assets/images/icon_play.png",
-                                    press: () {
-                                      showAlertDialog(context);
-                                    }),
-                              ),
-                            ),
-                            Flexible(
-                              flex: 3,
-                              child: Container(
-                                margin: EdgeInsets.all(10),
-                                child: Menu(
-                                    title: "Konsul",
-                                    gambar: "assets/images/icon_headphones.png",
-                                    press: () {
-                                      showAlertDialog(context);
-                                    }),
-                              ),
-                            ),
-                            Flexible(
-                              flex: 3,
-                              child: Container(
-                                margin: EdgeInsets.all(10),
-                                child: Menu(
-                                    title: "Game",
-                                    gambar: "assets/images/icon_puzzle.png",
-                                    press: () {
-                                      showAlertDialog(context);
-                                    }),
                               ),
                             ),
                           ],
